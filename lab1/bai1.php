@@ -26,9 +26,14 @@ $page_content = $course_name;
 ?>
 <!--view-->
 <?= $page_content;?>
-<select name="course" id="">
-     <?php
-     foreach ($list_of_course as $course_name): ?>
-    <option><?= $course_name?> </option>
- <?php endforeach;?>
-</select>
+
+
+    <form action="" method="get">
+        <select name="semester" id="">
+            <?php foreach ($course as $key => $value): ?>
+                <option value="<?= $key ?>"><?= $value ?></option>
+            <?php endforeach; ?>
+        </select>
+        <button type="submit">Tìm</button>
+    </form>
+

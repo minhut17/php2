@@ -17,12 +17,13 @@ class HomeController extends BaseController
         if (isset($_GET['action'])) {
             switch ($_GET['action']) {
                 case 'home':
-                    include_once "App/Views/layouts/pageHome.php";
+                    include_once "App/Views/layouts/pageHome1.php";
                     break;
+                
                 case 'task':
                     include_once "App/Views/layouts/pageTask.php";
                     break;
-                case 'addTask':
+                case 'cTask':
                     include_once "App/Views/layouts/pageAddTask.php";
                     break;
                 case 'caterori':
@@ -35,15 +36,12 @@ class HomeController extends BaseController
                     include_once "App/Views/pageUser.php";
                     break;
                 default:
-                    // code trang 404
+                    include_once "App/Views/layouts/page404.php";
                     break;
             }
         } else {
-            include_once "App/Views/layouts/pageHome.php";
+            include_once "App/Views/layouts/pageHome1.php";
         }
-
-
-
 
         include_once "App/Views/componest/footer.php";
         // wrapper

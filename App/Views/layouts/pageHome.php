@@ -33,7 +33,7 @@
                 <span class="info-box-text">Thể Thao</span>
                 <span class="info-box-number">
                   10
-                  <small>%</small>
+                  <small></small>
                 </span>
               </div>
               <!-- /.info-box-content -->
@@ -47,7 +47,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Sở Thích</span>
-                <span class="info-box-number">41,410</span>
+                <span class="info-box-number">4</span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -64,7 +64,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Cuộc Sống</span>
-                <span class="info-box-number">760</span>
+                <span class="info-box-number">7</span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -77,7 +77,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Công việc</span>
-                <span class="info-box-number">2,000</span>
+                <span class="info-box-number">2</span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -91,7 +91,7 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h5 class="card-title">Monthly Recap Report</h5>
+                <h5 class="card-title">Báo Cáo Tháng</h5>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -119,7 +119,7 @@
                 <div class="row">
                   <div class="col-md-8">
                     <p class="text-center">
-                      <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
+                      <strong> 1 Jan, 2024 - 30 Jul, 2024</strong>
                     </p>
 
                     <div class="chart">
@@ -131,39 +131,39 @@
                   <!-- /.col -->
                   <div class="col-md-4">
                     <p class="text-center">
-                      <strong>Goal Completion</strong>
+                      <strong>Nhiệm Vụ Hoàn Thành</strong>
                     </p>
 
                     <div class="progress-group">
-                      Add Products to Cart
-                      <span class="float-right"><b>160</b>/200</span>
+                      Chạy Bộ Buổi Sáng
+                      <span class="float-right"><b>31</b>/31</span>
                       <div class="progress progress-sm">
-                        <div class="progress-bar bg-primary" style="width: 80%"></div>
+                        <div class="progress-bar bg-primary" style="width: 100%"></div>
                       </div>
                     </div>
                     <!-- /.progress-group -->
 
                     <div class="progress-group">
-                      Complete Purchase
-                      <span class="float-right"><b>310</b>/400</span>
+                    Làm Bài Tập Về Nhà
+                      <span class="float-right"><b>30</b>/31</span>
                       <div class="progress progress-sm">
-                        <div class="progress-bar bg-danger" style="width: 75%"></div>
+                        <div class="progress-bar bg-danger" style="width: 95%"></div>
                       </div>
                     </div>
 
                     <!-- /.progress-group -->
                     <div class="progress-group">
-                      <span class="progress-text">Visit Premium Page</span>
-                      <span class="float-right"><b>480</b>/800</span>
+                      <span class="progress-text">Học Ngoại Ngữ</span>
+                      <span class="float-right"><b>31</b>/31</span>
                       <div class="progress progress-sm">
-                        <div class="progress-bar bg-success" style="width: 60%"></div>
+                        <div class="progress-bar bg-success" style="width: 100%"></div>
                       </div>
                     </div>
 
                     <!-- /.progress-group -->
                     <div class="progress-group">
-                      Send Inquiries
-                      <span class="float-right"><b>250</b>/500</span>
+                     Thức Sớm
+                      <span class="float-right"><b>25</b>/31</span>
                       <div class="progress progress-sm">
                         <div class="progress-bar bg-warning" style="width: 50%"></div>
                       </div>

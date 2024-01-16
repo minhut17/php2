@@ -1,0 +1,10 @@
+{
+    "name": "nhut/php2_asm",
+
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "./App/"
+        }
+    }
+}

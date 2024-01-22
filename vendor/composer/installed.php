@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'mypc/lab3',
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
-        'reference' => 'a57d269c57bda2ecd174e1ce23aab3e06b1972c5',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => '410c79f217b5d84caebde1879521617891292492',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'mypc/lab3' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => 'a57d269c57bda2ecd174e1ce23aab3e06b1972c5',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '410c79f217b5d84caebde1879521617891292492',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

@@ -1,0 +1,16 @@
+{
+    "name": "mypc/lab3",
+    "description": "lab3",
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "minhut17",
+            "email": "140974475+minhut17@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}

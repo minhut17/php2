@@ -1,23 +1,19 @@
 <?php 
+session_start();
 require "vendor/autoload.php";
 use app\core\Route;
 
 
-// bai3-Lab4 tạo route với action là function
+
+
 $router = new Route;
 $router
 ->get('/',[app\Home::class,'index'])
-->post('/upload',[app\Home::class,'upload']);
+->post('/upload',[app\Home::class,'upload'])
+->get('/login',[app\Login::class,'login'])
+->post('/login',[app\Login::class,'login'])
+->post('/logout',[app\Login::class,'logout']);
 
-
-// // $router->register('/',function(){echo "trang đăng ký";});
-// // bai4-lab4 tạo route với action là class và method
-//  $router->get('/',[app\Home::class,'index']);
-
-
-// ->register('/',[app\Home::class,'index'])
-// ->register('/Invoices',[app\Invoices::class,'index'])
-// ->register('/Invoices/create',[app\Invoices::class,'create']);
 
 // Giải quyết yêu cầu hiện tại
 try {

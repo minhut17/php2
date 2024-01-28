@@ -12,7 +12,7 @@ class Home{
     }
     public function upload(){
       
-      $file = $_FILES['receipt'];
+    $file = $_FILES['receipt'];
     //đổi tên 
     $fileName = $file['name'];
     $fileNames = explode('.',$fileName);

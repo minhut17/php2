@@ -2,79 +2,106 @@
 namespace app\core;
 
 use \PDO;
+use PDOException;
 
 class Database
-{
-   
-    protected function connect()
-    {
-        $servername = "localhost";
-        $username = "root";
-        $password = "mysql";
+{   private $host = 'localhost';
+    private $dbname = 'dtl';
+    private $username = 'root';
+    private $password = 'mysql';
 
+    public $conn;
+
+    // Phương thức khởi tạo, thực hiện kết nối đến cơ sở dữ liệu
+    public function __construct() {
         try {
-            $conn = new PDO("mysql:host=$servername;dbname=dtl", $username, $password);
-            // set the PDO error mode to exception
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            return $conn;
-        } catch (\PDOException $e) {
-            echo "Connection failed: " . $e->getMessage();
+            $this->conn = new PDO("mysql:host={$this->host};dbname={$this->dbname}", $this->username, $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            echo 'Kết nối đến cơ sở dữ liệu thất bại: ' . $e->getMessage();
         }
     }
-}
+      
+    
+      private function execute($sql)
+        {
+            $sql_args = array_slice(func_get_args(), 1);
+            try {           
+                $stmt = $this->conn->prepare($sql);
+                $stmt->execute($sql_args);
+            } catch (PDOException $e) {
+                throw $e;
+            } finally {
+                unset($this->conn);
+            }
+        }
+    
+        function query($sql)
+        {
+            $sql_args = array_slice(func_get_args(), 1);
+            try {
+                $stmt = $this->conn->prepare($sql);
+                $stmt->execute($sql_args);
+                $rows = $stmt->fetchAll();
+                return $rows;
+            } catch (PDOException $e) {
+                throw $e;
+            } finally {
+                unset($this->conn);
+            }
+        }
+    
+        function query_one($sql)
+        {
+            $sql_args = array_slice(func_get_args(), 1);
+            try {
+                $stmt = $this->conn->prepare($sql);
+                $stmt->execute($sql_args);
+                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                return $row;
+            } catch (PDOException $e) {
+                throw $e;
+            } finally {
+                unset($this->conn);
+            }
+        }
+    
+        function query_value($sql)
+        {
+            $sql_args = array_slice(func_get_args(), 1);
+            try {
+                $stmt = $this->conn->prepare($sql);
+                $stmt->execute($sql_args);
+                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                return array_values($row)[0];
+            } catch (PDOException $e) {
+                throw $e;
+            } finally {
+                unset($this->conn);
+            }
+        }
+    
+        function execute_return_lastID($sql){
+            $sql_args = array_slice(func_get_args(), 1);
+            try {
+                $stmt = $this->conn->prepare($sql);
+                $stmt->execute($sql_args);
+                return $this->conn -> lastInsertId();
+            }
+            catch(PDOException $e){
+                throw $e;
+            }
+            finally{
+                unset($this->conn);
+            }
+        }
+    }
+
+    
 
 
 
-// class Database {
-//     private $host;
-//     private $username;
-//     private $password;
-//     private $dbname;
-//     private $charset;
 
-//     private $conn;
-
-//     public function __construct($host, $username, $password, $dbname, $charset = 'utf8') {
-//         $this->host = $host;
-//         $this->username = $username;
-//         $this->password = $password;
-//         $this->dbname = $dbname;
-//         $this->charset = $charset;
-
-//         $this->connect();
-//     }
-
-//     private function connect() {
-//         try {
-//             $dsn = "mysql:host={$this->host};dbname={$this->dbname};charset={$this->charset}";
-//             $options = [
-//                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-//                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-//                 PDO::ATTR_EMULATE_PREPARES => false,
-//             ];
-
-//           $this->conn = new PDO($dsn, $this->username, $this->password, $options);
-
-//         } catch (\PDOException $e) {
-//             die("Connection failed: " . $e->getMessage());
-//         }
-//     }
-
-//     public function getConnection() {
-//         return $this->conn;
-//     }
-// }
-
-// // Sử dụng:
-// $host = "localhost";
-// $username = "root";
-// $password = "mysql";
-// $dbname = "da1";
-
-// $database = new Database($host, $username, $password, $dbname);
-
-// // Lấy kết nối
-// $conn = $database->getConnection();
 
 
 
